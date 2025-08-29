@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProgressBarProps } from '../../type';
+import { motion } from 'motion/react';
 
 const ProgressBar: React.FC<ProgressBarProps> = ({
   currentAmount,
@@ -16,10 +17,13 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
         </p>
       </div>
       <div className="bg-[#E6E7EB] rounded-full w-full h-2 overflow-hidden">
-        <div
+        <motion.div
           className="bg-[#8265FF] rounded-full h-full"
-          style={{ width: `${percentage}%` }}
-        ></div>
+          initial={{ width: 0 }}
+          whileInView={{ width: `${percentage}%` }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 1.5, ease: 'easeOut' }}
+        ></motion.div>
       </div>
     </div>
   );
