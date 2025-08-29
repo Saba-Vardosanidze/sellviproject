@@ -25,3 +25,8 @@ export type CompanyCardsProps = {
     url: string;
   };
 };
+
+export type ProgressBarProps = {
+  currentAmount: number;
+  goalAmount: number;
+};

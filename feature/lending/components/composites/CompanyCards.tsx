@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { fetchCompanyCards } from '../../api';
 import Image from 'next/image';
 import Link from 'next/link';
+import ProgressBar from '../primitives/ProgressBar';
 
 const CompanyCards = () => {
   const { data, isLoading, isError } = useQuery({
@@ -26,9 +27,7 @@ const CompanyCards = () => {
             <div className="flex justify-between w-full">
               <div className="flex items-center gap-[7px]">
                 <div className="bg-[#D9D9D9] border border-[#0000007A] rounded-[8px] w-[28px] h-[28px]"></div>
-                <p className="font-bold text-[#000000] text-[22px]">
-                  {task.title}
-                </p>
+                <p className="font-bold text-[22px]">{task.title}</p>
                 {task.verified ? (
                   <Image
                     src="/images/svg/verified.svg"
@@ -47,13 +46,11 @@ const CompanyCards = () => {
                   width={18}
                   height={18}
                 />
-                <p className="font-bold text-[#000000] text-[14px]">
-                  {task.rating}
-                </p>
+                <p className="font-bold text-[14px]">{task.rating}</p>
               </div>
             </div>
             <div className="mt-[19px]">
-              <p className="font-medium text-[#000000] text-[14px]">
+              <p className="font-medium text-[14px]">
                 პოპულარული კვირის ჰაილაითები
               </p>
               <div className="flex gap-[9px] mt-[8px] mb-[6px]">
@@ -66,11 +63,47 @@ const CompanyCards = () => {
                   </span>
                 ))}
               </div>
-              <p className="font-medium text-[#000000] text-[14px]">
-                {task.description}
-              </p>
+              <p className="font-medium text-[14px]">{task.description}</p>
             </div>
-            <div className="bg-[#3012B30F] mt-[13px] rounded-[10px] w-full max-w-[391px] min-h-[113px]"></div>
+            <div className="flex flex-col justify-between bg-[#3012B30F] mt-[13px] p-[15px] rounded-[10px] w-full max-w-[391px] min-h-[113px]">
+              <div className="flex justify-between w-full max-w-[289px]">
+                <div className="flex flex-col">
+                  <div className="flex gap-[2px]">
+                    <Image
+                      src="/images/svg/dollar.svg"
+                      alt="filter"
+                      width={18}
+                      height={18}
+                    />
+                    <p className="font-bold text-[#00B737]">
+                      <span>{task.pricePerUnit.amount}</span>/
+                      <span>{task.pricePerUnit.unit}</span>
+                    </p>
+                  </div>
+                  <p className="font-bold text-[#000000D4] text-[12px]">
+                    ყოველ 1მ ნახვაზე
+                  </p>
+                </div>
+                <div>
+                  <div className="flex gap-[2px]">
+                    <Image
+                      src="/images/svg/users.svg"
+                      alt="filter"
+                      width={18}
+                      height={18}
+                    />
+                    <p className="font-bold text-[#3012B3]">
+                      <span>{task.pricePerUnit.amount}</span>/
+                      <span>{task.pricePerUnit.unit}</span>
+                    </p>
+                  </div>
+                  <p className="font-bold text-[#000000D4] text-[12px]">
+                    შემქმნელები
+                  </p>
+                </div>
+              </div>
+              <ProgressBar currentAmount={task.budget} goalAmount={10000} />
+            </div>
             <div className="space-y-[11px] mt-[6px]">
               <div className="flex gap-[8px]">
                 <Image
@@ -102,7 +135,7 @@ const CompanyCards = () => {
             </div>
             <Link href={task.button.url}>
               <button
-                className="mt-[17px] rounded-[8px] w-full min-h-[39px] font-medium text-[##F1E7FF] text-[12px] cursor-pointer"
+                className="mt-[17px] rounded-[8px] w-full min-h-[39px] font-medium text-[#F1E7FF] text-[12px] cursor-pointer"
                 style={{
                   background:
                     'linear-gradient(90deg, rgba(48,18,179,1) 0%, rgba(123,98,232,1) 100%)',
