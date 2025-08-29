@@ -33,3 +33,8 @@ export type ProgressBarProps = {
 export type CompanyCardProps = {
   task: CompanyCardsProps;
 };
+
+export type ButtonSliderProps = {
+  active: 'business' | 'creator';
+  setActive: (value: 'business' | 'creator') => void;
+};
