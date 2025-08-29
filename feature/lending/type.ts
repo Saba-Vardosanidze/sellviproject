@@ -30,3 +30,6 @@ export type ProgressBarProps = {
   currentAmount: number;
   goalAmount: number;
 };
+export type CompanyCardProps = {
+  task: CompanyCardsProps;
+};
