@@ -3,7 +3,7 @@ import CompanyCards from './CompanyCards';
 
 const Lending = () => {
   return (
-    <div className="space-y-[63px]">
+    <div className="flex flex-col gap-[63px]">
       <BusinessCreatorCards />
       <CompanyCards />
     </div>
