@@ -1,9 +1,9 @@
-import CompanyCards from '@/feature/lending/components/composites/CompanyCards';
+import Lending from '@/feature/lending/components/composites/Lending';
 
 const Home = () => {
   return (
     <div>
-      <CompanyCards />
+      <Lending />
     </div>
   );
 };
