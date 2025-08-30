@@ -13,7 +13,7 @@ const HeroSection = () => {
       <div className="flex flex-col items-center">
         <Header />
         <div className="space-y-[20px] mt-[45px] w-full max-w-[1288px]">
-          <p className="max-w-[571px] font-medium text-[35px] text-white">
+          <p className="max-w-[571px] font-medium text-[35px] text-white leading-11">
             პლათფორმა, რომელიც აკავშირებს ბრენდებს და UGC კონტენტის შემქმნელებს
           </p>
           <p className="max-w-[571px] font-medium text-[#B3B3B3]">

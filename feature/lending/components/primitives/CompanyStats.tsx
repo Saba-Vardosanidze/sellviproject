@@ -28,8 +28,7 @@ const CompanyStats = () => {
                   height={18}
                 />
               </div>
-              {/* These 16 pixels are just a test until I add the font. */}
-              <p className="font-bold text-[16px]">{companyStat.title}</p>
+              <p className="font-bold text-[18px]">{companyStat.title}</p>
             </div>
             <p className="font-medium text-[#000000BD] text-[12px]">
               {companyStat.description}
