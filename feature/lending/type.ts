@@ -50,3 +50,9 @@ export type DataProps = {
   business: Item[];
   creator: Item[];
 };
+
+export type ButtonProps = {
+  id: number;
+  label: string;
+  href: string;
+};
