@@ -14,7 +14,7 @@ const CompanyCards = () => {
   if (isError) return <p>Failed to fetch Cards</p>;
 
   return (
-    <div className="space-y-[31px]">
+    <div className="space-y-[31px] px-[25px]">
       <p className="font-bold text-[#583CCF] text-[32px] text-center">
         აღმოაჩინე აქტიური კამპანიები
       </p>

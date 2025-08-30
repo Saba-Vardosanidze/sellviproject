@@ -56,3 +56,12 @@ export type ButtonProps = {
   label: string;
   href: string;
 };
+
+export type companyStatsDataProps = {
+  id: number;
+  quantity: string;
+  title: string;
+  description: string;
+  icon: string;
+  alt: string;
+};
