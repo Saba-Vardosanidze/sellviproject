@@ -3869,6 +3869,7 @@ snapshots:
     dependencies:
       '@tanstack/query-core': 5.85.5
       react: 19.1.0
+
   '@trysound/sax@0.2.0': {}
 
   '@tybys/wasm-util@0.10.0':

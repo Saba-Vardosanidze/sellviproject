@@ -14,6 +14,10 @@
   font-family: 'HelveticaNeue', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

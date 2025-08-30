@@ -13,7 +13,10 @@ const BusinessCreatorCards = () => {
       : businessCreatorData.creator;
 
   return (
-    <div className="flex flex-col items-center space-y-[28px] m-auto px-[10px] w-full">
+    <div
+      id="howtowork"
+      className="flex flex-col items-center space-y-[28px] m-auto px-[10px] w-full"
+    >
       <p className="font-medium text-[32px] text-center">როგორ მუშაობს</p>
       <ButtonSlider active={active} setActive={setActive} />
       <div className="flex flex-wrap justify-center gap-[13px] w-full max-w-[1380px]">
