@@ -1,19 +1,23 @@
 'use client';
 
-import { companyCreateCard } from '@/feature/schema/createCompanyCardSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
 import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import { createCompanyCard } from '../../api';
+import ToggleSwitch from '../primitives/ToggleSwitch';
+import { companyCreateCard } from '@/feature/schema/createCompanyCardSchema';
 
 const CreateCard = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
+    watch,
   } = useForm({
     resolver: zodResolver(companyCreateCard),
+    defaultValues: { verified: false },
   });
 
   const { mutate } = useMutation({
@@ -55,7 +59,7 @@ const CreateCard = () => {
               id="CompanyName"
               {...register('title')}
             />
-            <p className="ml-[10px] text-[12px] text-red-500 text-sm">
+            <p className="ml-[10px] text-[12px] text-red-500">
               {errors.title?.message}
             </p>
           </div>
@@ -65,11 +69,11 @@ const CreateCard = () => {
             </label>
             <div className="relative flex flex-col gap-[5px]">
               <input
-                className={`py-[17px] pr-[18px] pl-[48px] rounded-[8px] outline outline-[#E3E8EF] focus:outline-[#3012B3CC] w-full`}
-                type="text"
+                className="py-[17px] pr-[18px] pl-[48px] rounded-[8px] outline outline-[#E3E8EF] focus:outline-[#3012B3CC] w-full"
+                type="number"
                 placeholder="5000"
                 id="budget"
-                {...register('budget')}
+                {...register('budget', { valueAsNumber: true })}
               />
               <Image
                 src="images/svg/lari.svg"
@@ -78,28 +82,38 @@ const CreateCard = () => {
                 height={20}
                 className="top-[18px] left-[18px] absolute"
               />
-              <p className="ml-[10px] text-[12px] text-red-500 text-sm">
+              <p className="ml-[10px] text-[12px] text-red-500">
                 {errors.budget?.message}
               </p>
             </div>
           </div>
         </div>
+
         <div className="flex flex-col gap-[5px] mt-[37px] w-full">
-          <label htmlFor="budget" className="text-[18px]">
+          <label htmlFor="description" className="text-[18px]">
             კამპანიის აღწერა
           </label>
-          <div className="relative flex flex-col gap-[5px]">
-            <textarea
-              className={`py-[17px] px-[18px] rounded-[8px] outline outline-[#E3E8EF] focus:outline-[#3012B3CC] w-full`}
-              placeholder="აღწერეთ თქვენი კამპანიის მიზნები, სამიზნე აუდიტორია და რას ეძებთ შემქმნელებში..."
-              id="budget"
-              {...register('description')}
-            />
-            <p className="ml-[10px] text-[12px] text-red-500 text-sm">
-              {errors.description?.message}
-            </p>
-          </div>
+          <textarea
+            className="px-[18px] py-[17px] rounded-[8px] outline outline-[#E3E8EF] focus:outline-[#3012B3CC] w-full"
+            placeholder="აღწერეთ თქვენი კამპანიის მიზნები, სამიზნე აუდიტორია და რას ეძებთ შემქმნელებში..."
+            id="description"
+            {...register('description')}
+          />
+          <p className="ml-[10px] text-[12px] text-red-500">
+            {errors.description?.message}
+          </p>
         </div>
+
+        <div className="flex justify-between mt-[37px] px-[18px] py-[17px] border border-[#E3E8EF] rounded-[8px]">
+          <p className="text-[#00000083] text-[18px] cursor-default">
+            ვერიფიკაცია
+          </p>
+          <ToggleSwitch
+            value={watch('verified')}
+            onToggle={(val) => setValue('verified', val)}
+          />
+        </div>
+
         <button
           type="submit"
           className="flex justify-center items-center bg-[var(--colorBlack)] ml-[40px] rounded-[8px] w-full max-w-[150px] min-h-[45px] font-bold text-[14px] text-[var(--colorWhite)] cursor-pointer"
