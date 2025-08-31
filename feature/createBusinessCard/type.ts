@@ -1,4 +1,20 @@
+import { UseFormRegisterReturn } from 'react-hook-form';
+
 export type ToggleSwitchProps = {
+  value: boolean;
+  onToggle: (val: boolean) => void;
+};
+export type FormComponentProps = {
+  label?: string;
+  placeholder?: string;
+  id?: string;
+  register?: UseFormRegisterReturn;
+  error?: string;
+  value?: boolean;
+  onToggle?: (val: boolean) => void;
+};
+export type ToggleFieldProps = {
+  label: string;
   value: boolean;
   onToggle: (val: boolean) => void;
 };
