@@ -7,7 +7,7 @@ const CompanyStats = () => {
       {companyStatsData.map((companyStat) => (
         <div
           key={companyStat.id}
-          className="flex gap-[20px] bg-white shadow-[0px_0px_9.9px_0px_#00000040] px-[15px] py-[20px] border-[#583CCF] border-[2px] rounded-[8px] w-full max-w-[396px] min-h-[103px]"
+          className="flex gap-[20px] bg-[#FFFFFF99] shadow-[0px_0px_9.9px_0px_#00000040] px-[15px] py-[20px] border-[#583CCF] border-[2px] rounded-[8px] w-full max-w-[396px] min-h-[103px]"
         >
           <div className="flex justify-center items-center bg-[#3012B314] border-[#00000014] border-[2px] rounded-full w-[60px] h-[60px] shrink-0">
             <Image

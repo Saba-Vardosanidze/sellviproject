@@ -4,9 +4,9 @@ import { heroButtons } from '../../data/heroButtonsData';
 
 const Header = () => {
   return (
-    <header className="flex justify-between mt-[15px] w-full max-w-[1288px] min-h-[63px]">
+    <header className="flex justify-between mt-[7px] w-full max-w-[1288px] min-h-[62px]">
       <Link href="/">
-        <Image src="/images/svg/logo.svg" alt="logo" width={235} height={63} />
+        <Image src="/images/svg/logo.svg" alt="logo" width={235} height={62} />
       </Link>
       <div className="flex gap-[17px]">
         {heroButtons.map((heroButton) => (
