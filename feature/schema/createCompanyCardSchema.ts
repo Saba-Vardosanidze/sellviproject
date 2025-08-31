@@ -15,4 +15,5 @@ export const companyCreateCard = z.object({
     .max(300, { message: 'აღწერა უნდა იყოს მაქსიმუმ 300 სიმბოლო' })
     .transform((s) => s.trim()),
   verified: z.boolean(),
+  categories: z.array(z.string()).optional(),
 });

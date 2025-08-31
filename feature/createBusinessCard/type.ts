@@ -18,3 +18,8 @@ export type ToggleFieldProps = {
   value: boolean;
   onToggle: (val: boolean) => void;
 };
+export type TagInputProps = {
+  label: string;
+  error?: string;
+  onChange?: (tags: string[]) => void;
+};

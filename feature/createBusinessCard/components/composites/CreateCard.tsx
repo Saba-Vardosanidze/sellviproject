@@ -21,7 +21,10 @@ const CreateCard = () => {
     watch,
   } = useForm({
     resolver: zodResolver(companyCreateCard),
-    defaultValues: { verified: false },
+    defaultValues: {
+      verified: false,
+      categories: [],
+    },
   });
 
   const { mutate } = useMutation({
@@ -63,13 +66,13 @@ const CreateCard = () => {
         <ToggleField
           label="ვერიფიკაცია"
           value={watch('verified')}
-          onToggle={(val: boolean) => setValue('verified', val)}
+          onToggle={(val) => setValue('verified', val)}
         />
 
         <TagInput
           label="კამპანიის თეგები"
-          register={register('title')}
-          error={errors.description?.message}
+          onChange={(tags) => setValue('categories', tags)}
+          error={errors.categories?.message}
         />
 
         <button
