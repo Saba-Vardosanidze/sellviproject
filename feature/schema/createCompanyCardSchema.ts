@@ -16,4 +16,5 @@ export const companyCreateCard = z.object({
     .transform((s) => s.trim()),
   verified: z.boolean(),
   categories: z.array(z.string()).optional(),
+  filters: z.array(z.string()).optional(),
 });

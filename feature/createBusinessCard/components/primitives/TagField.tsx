@@ -1,34 +1,40 @@
+// TagField.tsx
 import Image from 'next/image';
 import { useState } from 'react';
-import { TagInputProps } from '../../type';
+import { TagFieldProps } from '../../type';
 
-const TagInput = ({ label, error, onChange }: TagInputProps) => {
-  const [categories, setCategories] = useState<string[]>([]);
+const TagField = ({
+  label,
+  placeholder = 'ელემენტის დამატება',
+  error,
+  onChange,
+}: TagFieldProps) => {
+  const [items, setItems] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState('');
 
-  const handleAddTag = () => {
+  const handleAdd = () => {
     if (inputValue.trim()) {
-      const newCategories = [...categories, inputValue.trim()];
-      setCategories(newCategories);
+      const newItems = [...items, inputValue.trim()];
+      setItems(newItems);
       setInputValue('');
-
-      onChange?.(newCategories);
+      onChange?.(newItems);
     }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      handleAddTag();
+      handleAdd();
     }
   };
+
   return (
     <div className="flex flex-col gap-[5px] mt-[37px] w-full">
       <label className="text-[18px]">{label}</label>
       <div className="flex gap-[16px]">
         <input
           type="text"
-          placeholder="თეგის დამატება"
+          placeholder={placeholder}
           className="px-[18px] py-[17px] rounded-[8px] outline outline-[#E3E8EF] focus:outline-[#3012B3CC] w-full"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
@@ -36,7 +42,7 @@ const TagInput = ({ label, error, onChange }: TagInputProps) => {
         />
         <button
           type="button"
-          onClick={handleAddTag}
+          onClick={handleAdd}
           className="px-[17px] py-[17px] border border-[#E3E8EF] rounded-[8px] cursor-pointer"
         >
           <Image
@@ -48,14 +54,14 @@ const TagInput = ({ label, error, onChange }: TagInputProps) => {
         </button>
       </div>
 
-      {categories.length > 0 && (
+      {items.length > 0 && (
         <div className="flex flex-wrap gap-[8px] mt-[10px]">
-          {categories.map((category, index) => (
+          {items.map((item, index) => (
             <span
               key={index}
               className="bg-[#F3F4F6] px-[12px] py-[6px] rounded-[6px] text-[14px]"
             >
-              {category}
+              {item}
             </span>
           ))}
         </div>
@@ -66,4 +72,4 @@ const TagInput = ({ label, error, onChange }: TagInputProps) => {
   );
 };
 
-export default TagInput;
+export default TagField;

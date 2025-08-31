@@ -23,3 +23,9 @@ export type TagInputProps = {
   error?: string;
   onChange?: (tags: string[]) => void;
 };
+export type TagFieldProps = {
+  label: string;
+  placeholder?: string;
+  error?: string;
+  onChange?: (values: string[]) => void;
+};

@@ -10,7 +10,7 @@ import InputField from '../primitives/InputField';
 import BudgetInput from '../primitives/BudgetInput';
 import TextAreaField from '../primitives/TextAreaField';
 import ToggleField from '../primitives/ToggleField';
-import TagInput from '../primitives/TagInput';
+import TagField from '../primitives/TagField';
 
 const CreateCard = () => {
   const {
@@ -69,10 +69,18 @@ const CreateCard = () => {
           onToggle={(val) => setValue('verified', val)}
         />
 
-        <TagInput
+        <TagField
           label="კამპანიის თეგები"
+          placeholder="თეგის დამატება"
           onChange={(tags) => setValue('categories', tags)}
           error={errors.categories?.message}
+        />
+
+        <TagField
+          label="მოთხოვნები შემქმნელებისთვის"
+          placeholder="მაგ: ვიდეო 20+ წმ"
+          onChange={(filters) => setValue('filters', filters)}
+          error={errors.filters?.message}
         />
 
         <button
