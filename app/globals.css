@@ -5,6 +5,19 @@
   --foreground: #171717;
 }
 
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('/fonts/helvetica-neue-regular.ttf') format('truetype');
+}
+
+.custom-outline-font {
+  font-family: 'HelveticaNeue', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -22,5 +35,5 @@
 body {
   background: #ffffff;
   color: #000000;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'HelveticaNeue', Helvetica, sans-serif;
 }
