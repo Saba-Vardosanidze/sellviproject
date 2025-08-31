@@ -9,4 +9,9 @@ export const companyCreateCard = z.object({
     .number({ message: 'ბიუჯეტი უნდა იყოს რიცხვი' })
     .min(10, { message: 'ბიუჯეტი უნდა იყოს მინიმუმ 10' })
     .max(1000000, { message: 'ბიუჯეტი მეტია დასაშვებზე' }),
+  description: z
+    .string()
+    .min(20, { message: 'აღწერა უნდა იყოს მინიმუმ 20 სიმბოლო' })
+    .max(300, { message: 'აღწერა უნდა იყოს მაქსიმუმ 300 სიმბოლო' })
+    .transform((s) => s.trim()),
 });

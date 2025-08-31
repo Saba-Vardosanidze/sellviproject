@@ -84,6 +84,22 @@ const CreateCard = () => {
             </div>
           </div>
         </div>
+        <div className="flex flex-col gap-[5px] mt-[37px] w-full">
+          <label htmlFor="budget" className="text-[18px]">
+            კამპანიის აღწერა
+          </label>
+          <div className="relative flex flex-col gap-[5px]">
+            <textarea
+              className={`py-[17px] px-[18px] rounded-[8px] outline outline-[#E3E8EF] focus:outline-[#3012B3CC] w-full`}
+              placeholder="აღწერეთ თქვენი კამპანიის მიზნები, სამიზნე აუდიტორია და რას ეძებთ შემქმნელებში..."
+              id="budget"
+              {...register('description')}
+            />
+            <p className="ml-[10px] text-[12px] text-red-500 text-sm">
+              {errors.description?.message}
+            </p>
+          </div>
+        </div>
         <button
           type="submit"
           className="flex justify-center items-center bg-[var(--colorBlack)] ml-[40px] rounded-[8px] w-full max-w-[150px] min-h-[45px] font-bold text-[14px] text-[var(--colorWhite)] cursor-pointer"
