@@ -11,6 +11,10 @@ import BudgetInput from '../primitives/BudgetInput';
 import TextAreaField from '../primitives/TextAreaField';
 import ToggleField from '../primitives/ToggleField';
 import TagField from '../primitives/TagField';
+import CreatorsQuantity from '../primitives/CreatorsQuantity';
+import CurrentlyCreatorsQuantity from '../primitives/CurrentlyCreatorsQuantity';
+import Compensation from '../primitives/Compensation';
+import DateInput from '../primitives/DataInput';
 
 const CreateCard = () => {
   const {
@@ -45,7 +49,6 @@ const CreateCard = () => {
           <InputField
             label="კამპანიის სახელი"
             placeholder="მაგ: საზაფხულო პროდუქტი"
-            id="CompanyName"
             register={register('title')}
             error={errors.title?.message}
           />
@@ -58,7 +61,6 @@ const CreateCard = () => {
         <TextAreaField
           label="კამპანიის აღწერა"
           placeholder="აღწერეთ თქვენი კამპანიის მიზნები, სამიზნე აუდიტორია და რას ეძებთ შემქმნელებში..."
-          id="description"
           register={register('description')}
           error={errors.description?.message}
         />
@@ -81,6 +83,34 @@ const CreateCard = () => {
           placeholder="მაგ: ვიდეო 20+ წმ"
           onChange={(filters) => setValue('filters', filters)}
           error={errors.filters?.message}
+        />
+
+        <div className="flex gap-[75px] mt-[37px] w-full">
+          <CreatorsQuantity
+            label="შემქმნელების მაქსიმალური რაოდენობა"
+            placeholder="გამოიყენეთ მხოლოდ რიცხვები"
+            register={register('totalCreator', { valueAsNumber: true })}
+            error={errors.totalCreator?.message}
+          />
+          <CurrentlyCreatorsQuantity
+            label="ამჟამინდელი მომუშავე შემქმნელების რაოდენობა"
+            placeholder="გამოიყენეთ მხოლოდ რიცხვები"
+            register={register('currentlyCreator', { valueAsNumber: true })}
+            error={errors.currentlyCreator?.message}
+          />
+        </div>
+
+        <Compensation
+          label="ყოველ 1 მილიონ ნახვაზე ანაზღაურება"
+          placeholder="გამოიყენეთ მხოლოდ რიცხვები"
+          register={register('compensation', { valueAsNumber: true })}
+          error={errors.currentlyCreator?.message}
+        />
+
+        <DateInput
+          label="კამპანიის ხანგრძლივობა (დღეები)"
+          register={register('deadline')}
+          error={errors.deadline?.message}
         />
 
         <button

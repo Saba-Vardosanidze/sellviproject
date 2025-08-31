@@ -15,8 +15,8 @@ const CardStats = ({ task }: CompanyCardProps) => {
               height={18}
             />
             <p className="font-bold text-[#00B737]">
-              <span>{task.pricePerUnit.amount}</span>/
-              <span>{task.pricePerUnit.unit}</span>
+              <span>{task.pricePerUnit.amount}</span>
+              <span>/1k</span>
             </p>
           </div>
           <p className="font-bold text-[#000000D4] text-[12px]">

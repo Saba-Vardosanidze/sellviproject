@@ -2,7 +2,7 @@ import CreateCard from '@/feature/createBusinessCard/components/composites/Creat
 
 const CreateBusinessCard = () => {
   return (
-    <div>
+    <div className="px-[30px] py-[30px]">
       <CreateCard />
     </div>
   );
