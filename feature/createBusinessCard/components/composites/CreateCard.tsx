@@ -4,7 +4,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
 import { createCompanyCard } from '../../api';
-import { companyCreateCard } from '@/feature/schema/createCompanyCardSchema';
+import {
+  companyCreateCard,
+  CompanyCreateCardType,
+} from '@/feature/schema/createCompanyCardSchema';
 import CampaignHeader from '../primitives/CampaignHeader';
 import InputField from '../primitives/InputField';
 import BudgetInput from '../primitives/BudgetInput';
@@ -45,7 +48,7 @@ const CreateCard = () => {
     },
   });
 
-  const submitForm = (data) => {
+  const submitForm = (data: CompanyCreateCardType) => {
     mutate(data);
   };
 

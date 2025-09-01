@@ -16,7 +16,11 @@ const CompanyCard = ({ task }: CompanyCardProps) => {
               key={index}
               className="bg-[#F1E7FF] px-[10px] py-[6px] border border-[#3012B3] rounded-[60px] font-medium text-[#3012B3] text-[10px] cursor-default"
             >
-              {category}
+              {category ? (
+                category
+              ) : (
+                <p>კვირის ჰაილაითები არ არის ხელმისაწვდომი</p>
+              )}
             </span>
           ))}
         </div>
@@ -35,11 +39,16 @@ const CompanyCard = ({ task }: CompanyCardProps) => {
           />
           <div className="flex font-bold text-[#000000D4] text-[12px]">
             <p className="flex gap-[2px]">
-              {task.filters.map((category, index) => (
-                <span key={index}>
-                  {category} {index !== task.filters.length - 1 ? ',' : ''}
-                </span>
-              ))}
+              {task.filters?.length ? (
+                task.filters.map((category, index) => (
+                  <span key={index}>
+                    {category}
+                    {index !== task.filters!.length - 1 && ','}
+                  </span>
+                ))
+              ) : (
+                <span>სპეციალური მოთხოვნები არ არის</span>
+              )}
             </p>
           </div>
         </div>

@@ -47,3 +47,4 @@ export const companyCreateCard = z.object({
       { message: 'თარიღი უნდა იყოს დღევანდელი ან მომავალი' }
     ),
 });
+export type CompanyCreateCardType = z.infer<typeof companyCreateCard>;

@@ -1,7 +1,7 @@
-import { CompanyCardsProps } from '../lending/type';
+import { CompanyCreateCardType } from '../schema/createCompanyCardSchema';
 const baseURL: string | undefined = process.env.NEXT_PUBLIC_API_URL;
 
-export const createCompanyCard = async (newBlog: CompanyCardsProps) => {
+export const createCompanyCard = async (newBlog: CompanyCreateCardType) => {
   const response = await fetch(`${baseURL}/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
