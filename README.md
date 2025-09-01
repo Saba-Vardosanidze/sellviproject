@@ -4,7 +4,7 @@
 
 ---
 
-## 🎯 პროექტის მიზანი
+## პროექტის მიზანი
 
 - ბიზნესებს შეუძლიათ იპოვონ content creator-ები მათი კამპანიების გასაშუქებლად.
 - content creator-ები იღებენ შესაძლებლობას აქტიურად ჩაერთონ სხვადასხვა ბიზნესის პროექტებში.
@@ -12,7 +12,7 @@
 
 ---
 
-## ⚡ ფუნქციონალი / Features
+## ფუნქციონალი / Features
 
 - **ბიზნესის Card ჩამონათვალი:**
   - სათაურით: "აღმოაჩინე აქტიური კამპანიები"
@@ -24,7 +24,7 @@
 
 ---
 
-## 🛠 ტექნოლოგიები / Stack
+##ტექნოლოგიები / Stack
 
 - **Frontend:** Next.js, TypeScript, TailwindCSS
 - **State Management & Animations:** React Query, Embla Carousel, Framer Motion
@@ -35,7 +35,7 @@
 
 ---
 
-## 🚀 Setup & Installation
+## Setup & Installation
 
 1. პროექტის კლონირება:
 
