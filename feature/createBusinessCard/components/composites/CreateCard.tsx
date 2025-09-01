@@ -16,6 +16,7 @@ import CurrentlyCreatorsQuantity from '../primitives/CurrentlyCreatorsQuantity';
 import Compensation from '../primitives/Compensation';
 import DateInput from '../primitives/DataInput';
 import toast from 'react-hot-toast';
+import Link from 'next/link';
 
 const CreateCard = () => {
   const {
@@ -120,12 +121,11 @@ const CreateCard = () => {
           error={errors.deadline?.message}
         />
         <div className="flex justify-end gap-[22px] mt-[64px] w-full">
-          <button
-            type="submit"
-            className="flex justify-center items-center bg-white px-[12px] py-[12px] border border-[#00000024] rounded-[10px] cursor-pointer"
-          >
-            დაბრუნდი მთავარ გვერძე
-          </button>
+          <Link href="/">
+            <button className="flex justify-center items-center bg-white px-[12px] py-[12px] border border-[#00000024] rounded-[10px] cursor-pointer">
+              დაბრუნდი მთავარ გვერძე
+            </button>
+          </Link>
           <button
             type="submit"
             className="flex justify-center items-center bg-[#0866FF] px-[12px] py-[12px] border border-[#00000024] rounded-[10px] text-white cursor-pointer"

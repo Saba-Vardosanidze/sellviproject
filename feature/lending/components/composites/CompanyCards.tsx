@@ -28,7 +28,6 @@ const CompanyCards = () => {
     if (embla) embla.scrollNext();
   }, [embla]);
 
-  if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Failed to fetch Cards</p>;
 
   return (
@@ -43,16 +42,20 @@ const CompanyCards = () => {
         className="m-auto w-full max-w-[445px] lg:max-w-[1000px] xl:max-w-[1388px] overflow-hidden"
         ref={emblaRef}
       >
-        <div className="flex gap-[26px]">
-          {data?.map((task) => (
-            <div
-              key={task.id}
-              className="flex-[0_0_100%] lg:flex-[0_0_50%] xl:flex-[0_0_32%]"
-            >
-              <CompanyCard task={task} />
-            </div>
-          ))}
-        </div>
+        {isLoading ? (
+          <p className="justify-center w-full">Loading ...</p>
+        ) : (
+          <div className="flex gap-[26px]">
+            {data?.map((task) => (
+              <div
+                key={task.id}
+                className="flex-[0_0_100%] lg:flex-[0_0_50%] xl:flex-[0_0_32%]"
+              >
+                <CompanyCard task={task} />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="bg-[#262626] mt-[40px] w-full h-[1px]" />
