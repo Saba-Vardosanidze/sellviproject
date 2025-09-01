@@ -8,7 +8,7 @@ import { Company, Creator } from '@/public/images/svg';
 
 const HeroSectionBottomSide = () => {
   return (
-    <div className="flex gap-[42px] mt-[49px] w-full">
+    <div className="flex gap-[42px] mt-[49px] 2xl:mt-[49px] xl:mt-[40px] w-full">
       <div className="flex gap-[11px]">
         {heroScrollDownButton.map((eachElement) => (
           <Link href={eachElement.href} key={eachElement.id}>
@@ -35,7 +35,7 @@ const HeroSectionBottomSide = () => {
         ))}
       </div>
       <div className="flex items-center gap-[34px] mt-[14px]">
-        <p className="flex font-bold text-[#1E1E1E] text-[20px]">
+        <p className="hidden xl:flex font-bold text-[#1E1E1E] text-[20px] 2xl:text-[20px] xl:text-[12px]">
           დარეგისტრირდი როგორც:
         </p>
         <div className="flex items-center gap-[26px]">

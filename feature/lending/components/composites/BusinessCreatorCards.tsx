@@ -11,7 +11,7 @@ const BusinessCreatorCards = () => {
     active === 'business'
       ? businessCreatorData.business
       : businessCreatorData.creator;
-
+ 
   return (
     <div
       id="howtowork"

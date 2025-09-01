@@ -22,7 +22,7 @@ export const companyStatsData: companyStatsDataProps[] = [
   {
     id: 3,
     quantity: '12M',
-    title: 'გამომუშავებული თანხა',
+    title: 'გამომუშავებული',
     description:
       'პლათფორმაზე რეგისტრირებულია 350-ზე მეტი კრეატორი საქართველოს ყველა კუთხიდან',
     icon: '/images/svg/purpledollar.svg',
