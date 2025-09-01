@@ -15,6 +15,7 @@ import CreatorsQuantity from '../primitives/CreatorsQuantity';
 import CurrentlyCreatorsQuantity from '../primitives/CurrentlyCreatorsQuantity';
 import Compensation from '../primitives/Compensation';
 import DateInput from '../primitives/DataInput';
+import toast from 'react-hot-toast';
 
 const CreateCard = () => {
   const {
@@ -23,6 +24,7 @@ const CreateCard = () => {
     formState: { errors },
     setValue,
     watch,
+    reset,
   } = useForm({
     resolver: zodResolver(companyCreateCard),
     defaultValues: {
@@ -33,8 +35,13 @@ const CreateCard = () => {
 
   const { mutate } = useMutation({
     mutationFn: createCompanyCard,
-    onSuccess: () => {},
-    onError: () => {},
+    onSuccess: () => {
+      reset();
+      toast.success('წარმატებით დაემატა!');
+    },
+    onError: () => {
+      toast.error('დაფიქსირდა შეცდომა.');
+    },
   });
 
   const submitForm = (data) => {

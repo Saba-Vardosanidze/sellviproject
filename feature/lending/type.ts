@@ -1,29 +1,19 @@
 export type CompanyCardsProps = {
-  id: number;
+  createdAt: string;
+  avatar: string;
+  id: string;
   title: string;
-  verified: boolean;
-  rating: number;
-  categories: string[];
-  description: string;
-  pricePerUnit: {
-    amount: number;
-    currency: string;
-    unit: string;
-  };
-  requirements: {
-    joined: number;
-    total: number;
-  };
   budget: number;
-  filters: {
-    contentType: string;
-    requirement: string;
-    videolength: string;
-  };
+  description: string;
+  totalCreator: number;
+  currentlyCreator: number;
+  compensation: number;
+  verified: boolean;
+  categories: string[];
+  filters: string[];
   deadline: string;
-  button: {
-    url: string;
-  };
+  buttonUrl: string;
+  rating: number;
 };
 
 export type ProgressBarProps = {
