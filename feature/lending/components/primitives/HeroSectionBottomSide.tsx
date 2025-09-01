@@ -35,7 +35,7 @@ const HeroSectionBottomSide = () => {
         ))}
       </div>
       <div className="flex items-center gap-[34px] mt-[14px]">
-        <p className="font-bold text-[#1E1E1E] text-[20px]">
+        <p className="flex font-bold text-[#1E1E1E] text-[20px]">
           დარეგისტრირდი როგორც:
         </p>
         <div className="flex items-center gap-[26px]">
