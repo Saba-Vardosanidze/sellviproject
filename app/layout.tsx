@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Business & Creator Connect',
+  title: 'Sellvio',
   description:
     'პლატფორმა, სადაც ბიზნესები და შემოქმედები ერთმანეთს პოულობენ. ორივეს შეუძლია პოსტის შექმნა და კონტაქტის დამყარება.',
   openGraph: {
