@@ -119,13 +119,20 @@ const CreateCard = () => {
           register={register('deadline')}
           error={errors.deadline?.message}
         />
-
-        <button
-          type="submit"
-          className="flex justify-center items-center bg-[var(--colorBlack)] ml-[40px] rounded-[8px] w-full max-w-[150px] min-h-[45px] font-bold text-[14px] text-[var(--colorWhite)] cursor-pointer"
-        >
-          SUBMIT
-        </button>
+        <div className="flex justify-end gap-[22px] mt-[64px] w-full">
+          <button
+            type="submit"
+            className="flex justify-center items-center bg-white px-[12px] py-[12px] border border-[#00000024] rounded-[10px] cursor-pointer"
+          >
+            დაბრუნდი მთავარ გვერძე
+          </button>
+          <button
+            type="submit"
+            className="flex justify-center items-center bg-[#0866FF] px-[12px] py-[12px] border border-[#00000024] rounded-[10px] text-white cursor-pointer"
+          >
+            შექმენი გამპანია
+          </button>
+        </div>
       </form>
     </div>
   );
