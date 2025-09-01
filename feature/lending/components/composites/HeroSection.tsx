@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import CompanyStats from '../primitives/CompanyStats';
+import CompanyStats from '../../../createBusinessCard/components/primitives/CompanyStats';
 import Header from '../primitives/Header';
 import HeroSectionBottomSide from '../primitives/HeroSectionBottomSide';
 

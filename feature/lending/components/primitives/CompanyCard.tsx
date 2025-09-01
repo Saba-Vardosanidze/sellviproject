@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import CardHeader from './CardHeader';
 import CardStats from './CardStats';
 import { CompanyCardProps } from '../../type';
@@ -17,7 +16,11 @@ const CompanyCard = ({ task }: CompanyCardProps) => {
               key={index}
               className="bg-[#F1E7FF] px-[10px] py-[6px] border border-[#3012B3] rounded-[60px] font-medium text-[#3012B3] text-[10px] cursor-default"
             >
-              {category}
+              {category ? (
+                category
+              ) : (
+                <p>კვირის ჰაილაითები არ არის ხელმისაწვდომი</p>
+              )}
             </span>
           ))}
         </div>
@@ -36,9 +39,16 @@ const CompanyCard = ({ task }: CompanyCardProps) => {
           />
           <div className="flex font-bold text-[#000000D4] text-[12px]">
             <p className="flex gap-[2px]">
-              <span>{task.filters.contentType}</span>,
-              <span>{task.filters.requirement}</span>,
-              <span>{task.filters.videolength} წმ</span>
+              {task.filters?.length ? (
+                task.filters.map((category, index) => (
+                  <span key={index}>
+                    {category}
+                    {index !== task.filters!.length - 1 && ','}
+                  </span>
+                ))
+              ) : (
+                <span>სპეციალური მოთხოვნები არ არის</span>
+              )}
             </p>
           </div>
         </div>
@@ -56,17 +66,15 @@ const CompanyCard = ({ task }: CompanyCardProps) => {
         </div>
       </div>
 
-      <Link href={task.button.url}>
-        <button
-          className="mt-[17px] rounded-[8px] w-full min-h-[39px] font-medium text-[#F1E7FF] text-[12px] cursor-pointer"
-          style={{
-            background:
-              'linear-gradient(90deg, rgba(48,18,179,1) 0%, rgba(123,98,232,1) 100%)',
-          }}
-        >
-          გაწევრიანება
-        </button>
-      </Link>
+      <button
+        className="mt-[17px] rounded-[8px] w-full min-h-[39px] font-medium text-[#F1E7FF] text-[12px] cursor-pointer"
+        style={{
+          background:
+            'linear-gradient(90deg, rgba(48,18,179,1) 0%, rgba(123,98,232,1) 100%)',
+        }}
+      >
+        გაწევრიანება
+      </button>
     </div>
   );
 };

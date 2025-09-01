@@ -15,8 +15,8 @@ const CardStats = ({ task }: CompanyCardProps) => {
               height={18}
             />
             <p className="font-bold text-[#00B737]">
-              <span>{task.pricePerUnit.amount}</span>/
-              <span>{task.pricePerUnit.unit}</span>
+              <span>{task.compensation}</span>
+              <span>/1k</span>
             </p>
           </div>
           <p className="font-bold text-[#000000D4] text-[12px]">
@@ -32,8 +32,8 @@ const CardStats = ({ task }: CompanyCardProps) => {
               height={18}
             />
             <p className="font-bold text-[#3012B3]">
-              <span>{task.requirements.joined}</span>/
-              <span>{task.requirements.total}</span>
+              <span>{task.currentlyCreator}</span>/
+              <span>{task.totalCreator}</span>
             </p>
           </div>
           <p className="font-bold text-[#000000D4] text-[12px]">შემქმნელები</p>

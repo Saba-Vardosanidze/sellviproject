@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { companyStatsData } from '../../data/companyStatsData';
+import { companyStatsData } from '../../../lending/data/companyStatsData';
 
 const CompanyStats = () => {
   return (
